@@ -1,0 +1,58 @@
+.resizbl .controls {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: -1px;
+  left: 0;
+  margin: 0px;
+  z-index: 1000;
+  pointer-events: none;
+}
+.resizbl .controls .dot {
+  position: absolute;
+  border-radius: 100%;
+  transition: opacity 0.5s linear;
+  opacity: 1;
+  z-index: 1000;
+  pointer-events: all;
+}
+.resizbl .controls .dot.lt {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+.resizbl .controls .dot.t {
+  top: 0;
+  left: 50%;
+  cursor: ns-resize;
+}
+.resizbl .controls .dot.rt {
+  top: 0;
+  right: -1px;
+  cursor: nesw-resize;
+}
+.resizbl .controls .dot.r {
+  top: 50%;
+  right: -1px;
+  cursor: ew-resize;
+}
+.resizbl .controls .dot.rb {
+  bottom: -1px;
+  right: -1px;
+  cursor: nwse-resize;
+}
+.resizbl .controls .dot.b {
+  bottom: -1px;
+  left: 50%;
+  cursor: ns-resize;
+}
+.resizbl .controls .dot.lb {
+  bottom: -1px;
+  left: 0;
+  cursor: nesw-resize;
+}
+.resizbl .controls .dot.l {
+  top: 50%;
+  left: 0;
+  cursor: ew-resize;
+}
