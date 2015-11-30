@@ -45,18 +45,32 @@
 
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <h3>Usage</h3>
-            <p>init</p>
+<p>init</p>
 <pre>
 $(function(){
     $('.some-element').resizbl();
 });
 </pre>
-            <p>destroy</p>
+<p>destroy</p>
 <pre>
 $(function(){
     $('.some-element').resizbl('destroy');
 });
 </pre>
+<h3>show/hide</h3>
+<pre>
+$('.some-element').resizbl('show');
+$('.some-element').resizbl('hide');
+</pre>
+<h3>get size</h3>
+<pre>
+$('.some-element').resizbl('size');
+
+// returns
+// Object {width: 400, height: 200}
+</pre>
+
+
 
             <footer class="site-footer">
                 <span class="site-footer-owner"><a href="https://github.com/Mangor/resizbl">Resizbl</a> is maintained by <a href="https://github.com/Mangor">Mangor</a>.</span>
