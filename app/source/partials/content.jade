@@ -1,0 +1,165 @@
+article
+	h1 simple flex grid demo
+	style.
+		article{padding:1.77em;}
+		h3{margin:1.77em 0;border-bottom:1px solid #bebebe;}
+		.Demo{box-sizing: border-box;width:100%;padding:0 1em;background:rgba(147,128,108,.1);border-radius:3px}
+		//- .Demo::after{content:'\00a0';display:block;margin-top:1em;height:0;visibility:hidden}
+		.Demo-spaced{margin-bottom:1.5em}
+		.copyToClipboard{position:relative;cursor:pointer;}
+		.copyToClipboard:hover:before{
+			box-sizing: border-box;
+			content: 'Click to copy';
+			position: absolute;
+			width: 100px;
+			top: -30px;
+			left: 50%;
+			padding: 6px;
+			margin: 0 0 0 -50px;
+			font-size: 12px;
+			color: #fff;
+			text-align: center;
+			background: #000;
+			border-radius: 4px;
+		}
+		.copied:hover:before{content:'Copied!'}
+		.copyToClipboard::selection {background:transparent;text-shadow:initial;}
+		pre{font-size:10px;padding:1.77em;background:#f5f5ea;border-radius:5px;overflow:visible;}
+		span.info{display:inline-block;padding:.5em;background-color:#C6DEE4;border-radius:5px;margin:1px 0;}
+	script.
+		function SelectText(e) {
+			e = e || window.event;
+			var target = event.target || e.srcElement;
+			var doc = document;
+			var range;
+			var selection;
+			if (doc.body.createTextRange) {
+				range = document.body.createTextRange();
+				range.moveToElementText(target);
+				range.select();
+			} else if (window.getSelection) {
+				selection = window.getSelection();
+				range = document.createRange();
+				range.selectNodeContents(target);
+				selection.removeAllRanges();
+				selection.addRange(range);
+			}
+			try {
+				var successful = document.execCommand('copy');
+				var msg = successful ? 'successful' : 'unsuccessful';
+				//- console.log('Copying text command was ' + msg);
+				e.classList.add('copied')
+				setTimeout(function(){
+					e.classList.remove('copied')
+				}, 1000);
+			} catch (err) {
+				//- console.log('Oops, unable to copy');
+			}
+		}
+	h3 Individual Sizing
+	.row
+		.col-sm-3
+			.Demo 1/4&#32
+				br
+				| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		.col
+			.Demo auto width
+		.col-sm-2
+			.Demo 100/6&#32
+				br
+				| Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	pre(onClick="SelectText(this)").copyToClipboard.
+		.row
+			.col-sm-3
+				.Demo 1/4&#32
+					br
+					| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			.col
+				.Demo auto width
+			.col-sm-2
+				.Demo 100/6&#32
+					br
+					| Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+	h3 not equal height
+	.row.row-noflex
+		.col-sm-3
+			.Demo 1/4&#32
+				br
+				| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		.col
+			.Demo auto
+		.col-sm-4
+			.Demo 1/3&#32
+				br
+				| Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	pre
+		| Just add&#32
+		span(onClick="SelectText(this)").info.copyToClipboard .row-noflex
+		| &#32class to row
+
+	H3 Responsive
+	.row
+		.col-lg-6
+			.Demo Full / Halves
+		.col-lg-6
+			.Demo Full / Halves
+	pre(onClick="SelectText(this)").copyToClipboard.
+		.row
+			.col-lg-6
+				.Demo Full / Halves
+			.col-lg-6
+				.Demo Full / Halves
+
+
+	h3 row-ception
+	.row
+		.col
+			.col-sm-3
+				.Demo 1/3
+			.col
+				.Demo
+					.row
+						.col
+							.Demo 1/2
+						.col
+							.Demo 1/2
+		.col-sm-3
+			.Demo 1/3
+
+	h3 Alignment Features
+	.row
+		.col.col-top
+			.Demo This col should be top aligned.
+		.col
+			.Demo
+				| Curabitur pulvinar dolor lectus, quis porta turpis ullamcorper nec. Quisque eget varius turpis, quis iaculis nibh. Ut interdum ligula id metus hendrerit cursus. Integer eu leo felis. Aenean commodo ultrices nunc, sit amet blandit elit gravida in. Sed est ligula, ornare ac nisi adipiscing, iaculis facilisis tellus.
+		.col.col-middle
+			.Demo This col should be center-aligned.
+		.col.col-bottom
+			.Demo This col should be bottom-aligned.
+	pre
+		| For row alignment&#32
+		span(onClick="SelectText(this)").info.copyToClipboard .row-top
+		| &#32
+		span(onClick="SelectText(this)").info.copyToClipboard .row-middle
+		| &#32
+		span(onClick="SelectText(this)").info.copyToClipboard .row-bottom
+		| &#32
+		| For cell alignment
+		span(onClick="SelectText(this)").info.copyToClipboard .col-top
+		| &#32
+		span(onClick="SelectText(this)").info.copyToClipboard .col-middle
+		| &#32
+		span(onClick="SelectText(this)").info.copyToClipboard .col-bottom
+	pre(onClick="SelectText(this)").copyToClipboard.
+		.row
+			.col.col-top
+				.Demo This col should be top aligned.
+			.col
+				.Demo
+					| Curabitur pulvinar dolor lectus, quis ...
+			.col.col-middle
+				.Demo This col should be center-aligned.
+			.col.col-bottom
+				.Demo This col should be bottom-aligned.

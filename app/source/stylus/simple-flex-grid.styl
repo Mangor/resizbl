@@ -1,0 +1,94 @@
+/*
+ * Flex grid
+ *
+ *
+ */
+percentage($n)
+	if $n == 0
+		0
+	else
+		unit($n * 100, "%")
+
+break-sm = 384px
+break-md = 576px
+break-lg = 768px
+
+$grid-columns = 12
+
+.row
+	display flex
+	flex-wrap wrap
+	padding 0 0.5em
+	margin 0 -1em 1em -1em
+
+$col
+	display block
+// Common styles for all sizes of grid columns, widths 1-12
+for $index in 1..$grid-columns
+	.row-noflex
+		& > .col,
+		& > .col-sm-{$index},
+		& > .col-md-{$index},
+		& > .col-lg-{$index}
+			@extend $col
+
+/* Alignment per row */
+.row-top
+	align-items flex-start
+
+.row-bottom
+	align-items flex-end
+
+.row-middle
+	align-items center
+
+.row-justifyCenter
+	justify-content center
+
+
+
+/* Alignment per col */
+.col-top
+	align-self flex-start
+
+.col-middle
+	align-self center
+
+.col-bottom
+	align-self flex-end
+
+.col-auto
+	flex none
+
+/* Base classes for all media */
+.col
+	flex 1
+
+make-grid-columns()
+	$col
+		box-sizing border-box
+		display flex
+		width 100%
+		padding 0 0.5em
+	for $index in 1..$grid-columns
+		.col, .col-sm-{$index}, .col-md-{$index}, .col-lg-{$index}
+			@extend $col
+
+calc-grid-column($index, $class)
+	if $index > 0
+		.col-{$class}-{$index}
+			flex 0 0 percentage(($index / $grid-columns))
+
+loop-grid-columns($grid-columns, $class)
+	for $index in $grid-columns..0
+		calc-grid-column($index, $class)
+		res $index
+
+make-grid-columns()
+
+@media (min-width: break-sm)
+	loop-grid-columns($grid-columns, sm)
+@media (min-width: break-md)
+	loop-grid-columns($grid-columns, md)
+@media (min-width: break-lg)
+	loop-grid-columns($grid-columns, lg)

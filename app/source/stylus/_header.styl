@@ -1,0 +1,67 @@
+html, body
+    margin 0
+
+.some-element
+    position absolute
+    top 40px
+    left 40px
+    width 200px
+    .content
+        padding 1em
+.some-element2
+    position absolute
+    top 300px
+    left 300px
+    width 200px
+    .content
+        padding 1em
+
+.resizbl
+    .controls
+        position absolute
+        top 0
+        right -1px
+        bottom -1px
+        left 0
+        margin 0px
+        z-index 1000
+        pointer-events none
+        .dot
+            position absolute
+            border-radius 100%
+            transition opacity 0.5s linear
+            opacity 1
+            z-index 1000
+            pointer-events all
+            &.lt
+                top 0
+                left 0
+                cursor nwse-resize
+            &.t
+                top 0
+                left 50%
+                cursor ns-resize
+            &.rt
+                top 0
+                right -1px
+                cursor nesw-resize
+            &.r
+                top 50%
+                right -1px
+                cursor ew-resize
+            &.rb
+                bottom -1px
+                right -1px
+                cursor nwse-resize
+            &.b
+                bottom -1px
+                left 50%
+                cursor ns-resize
+            &.lb
+                bottom -1px
+                left 0
+                cursor nesw-resize
+            &.l
+                top 50%
+                left 0
+                cursor ew-resize
