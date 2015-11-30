@@ -188,7 +188,12 @@
             }
             this.find('.controls').hide();
         },
-        update: function(content) {}
+        size: function() {
+            return {
+                width: parseInt(this.css('width'), 10),
+                height: parseInt(this.css('height'), 10)
+            };
+        }
     };
 
     $.fn.resizbl = function(method) {
