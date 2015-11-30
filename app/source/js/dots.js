@@ -204,7 +204,3 @@
     };
 
 })(jQuery, window, document);
-
-$(function(){
-    $('.some-element').resizbl();
-});
