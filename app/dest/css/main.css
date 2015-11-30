@@ -1,0 +1,651 @@
+/* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+/* =============================================================================
+	 Variables
+	 ========================================================================== */
+/* HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+	 Base styles: opinionated defaults
+	 ========================================================================== */
+html {
+  color: #000;
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Disable webkit tap highlight
+ */
+html,
+body {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #fff;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/* ==|== custom styles =============================================== */
+html,
+body {
+  margin: 0;
+}
+.some-element {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 200px;
+}
+.some-element .content {
+  padding: 1em;
+}
+.some-element2 {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 200px;
+}
+.some-element2 .content {
+  padding: 1em;
+}
+.resizbl .controls {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: -1px;
+  left: 0;
+  margin: 0px;
+  z-index: 1000;
+  pointer-events: none;
+}
+.resizbl .controls .dot {
+  position: absolute;
+  border-radius: 100%;
+  transition: opacity 0.5s linear;
+  opacity: 1;
+  z-index: 1000;
+  pointer-events: all;
+}
+.resizbl .controls .dot.lt {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+.resizbl .controls .dot.t {
+  top: 0;
+  left: 50%;
+  cursor: ns-resize;
+}
+.resizbl .controls .dot.rt {
+  top: 0;
+  right: -1px;
+  cursor: nesw-resize;
+}
+.resizbl .controls .dot.r {
+  top: 50%;
+  right: -1px;
+  cursor: ew-resize;
+}
+.resizbl .controls .dot.rb {
+  bottom: -1px;
+  right: -1px;
+  cursor: nwse-resize;
+}
+.resizbl .controls .dot.b {
+  bottom: -1px;
+  left: 50%;
+  cursor: ns-resize;
+}
+.resizbl .controls .dot.lb {
+  bottom: -1px;
+  left: 0;
+  cursor: nesw-resize;
+}
+.resizbl .controls .dot.l {
+  top: 50%;
+  left: 0;
+  cursor: ew-resize;
+}
+/* _ style*/
+/* End of _ style*/
+/* _ style*/
+/* End of _ style*/
+/* ==========================================================================
+	 Helper classes
+	 ========================================================================== */
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.5em;
+  margin: 0 -1em 1em -1em;
+}
+.row-noflex > .col,
+.row-noflex > .col-sm-1,
+.row-noflex > .col-md-1,
+.row-noflex > .col-lg-1,
+.row-noflex > .col-sm-2,
+.row-noflex > .col-md-2,
+.row-noflex > .col-lg-2,
+.row-noflex > .col-sm-3,
+.row-noflex > .col-md-3,
+.row-noflex > .col-lg-3,
+.row-noflex > .col-sm-4,
+.row-noflex > .col-md-4,
+.row-noflex > .col-lg-4,
+.row-noflex > .col-sm-5,
+.row-noflex > .col-md-5,
+.row-noflex > .col-lg-5,
+.row-noflex > .col-sm-6,
+.row-noflex > .col-md-6,
+.row-noflex > .col-lg-6,
+.row-noflex > .col-sm-7,
+.row-noflex > .col-md-7,
+.row-noflex > .col-lg-7,
+.row-noflex > .col-sm-8,
+.row-noflex > .col-md-8,
+.row-noflex > .col-lg-8,
+.row-noflex > .col-sm-9,
+.row-noflex > .col-md-9,
+.row-noflex > .col-lg-9,
+.row-noflex > .col-sm-10,
+.row-noflex > .col-md-10,
+.row-noflex > .col-lg-10,
+.row-noflex > .col-sm-11,
+.row-noflex > .col-md-11,
+.row-noflex > .col-lg-11,
+.row-noflex > .col-sm-12,
+.row-noflex > .col-md-12,
+.row-noflex > .col-lg-12,
+.col,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  display: block;
+}
+.row-top {
+  align-items: flex-start;
+}
+.row-bottom {
+  align-items: flex-end;
+}
+.row-middle {
+  align-items: center;
+}
+.row-justifyCenter {
+  justify-content: center;
+}
+.col-top {
+  align-self: flex-start;
+}
+.col-middle {
+  align-self: center;
+}
+.col-bottom {
+  align-self: flex-end;
+}
+.col-auto {
+  flex: none;
+}
+.col {
+  flex: 1;
+}
+.col,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 0 0.5em;
+}
+@media (min-width: 384px) {
+  .col-sm-12 {
+    flex: 0 0 100%;
+  }
+  .col-sm-11 {
+    flex: 0 0 91.66666666666666%;
+  }
+  .col-sm-10 {
+    flex: 0 0 83.33333333333334%;
+  }
+  .col-sm-9 {
+    flex: 0 0 75%;
+  }
+  .col-sm-8 {
+    flex: 0 0 66.66666666666666%;
+  }
+  .col-sm-7 {
+    flex: 0 0 58.333333333333336%;
+  }
+  .col-sm-6 {
+    flex: 0 0 50%;
+  }
+  .col-sm-5 {
+    flex: 0 0 41.66666666666667%;
+  }
+  .col-sm-4 {
+    flex: 0 0 33.33333333333333%;
+  }
+  .col-sm-3 {
+    flex: 0 0 25%;
+  }
+  .col-sm-2 {
+    flex: 0 0 16.666666666666664%;
+  }
+  .col-sm-1 {
+    flex: 0 0 8.333333333333332%;
+  }
+}
+@media (min-width: 576px) {
+  .col-md-12 {
+    flex: 0 0 100%;
+  }
+  .col-md-11 {
+    flex: 0 0 91.66666666666666%;
+  }
+  .col-md-10 {
+    flex: 0 0 83.33333333333334%;
+  }
+  .col-md-9 {
+    flex: 0 0 75%;
+  }
+  .col-md-8 {
+    flex: 0 0 66.66666666666666%;
+  }
+  .col-md-7 {
+    flex: 0 0 58.333333333333336%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+  }
+  .col-md-5 {
+    flex: 0 0 41.66666666666667%;
+  }
+  .col-md-4 {
+    flex: 0 0 33.33333333333333%;
+  }
+  .col-md-3 {
+    flex: 0 0 25%;
+  }
+  .col-md-2 {
+    flex: 0 0 16.666666666666664%;
+  }
+  .col-md-1 {
+    flex: 0 0 8.333333333333332%;
+  }
+}
+@media (min-width: 768px) {
+  .col-lg-12 {
+    flex: 0 0 100%;
+  }
+  .col-lg-11 {
+    flex: 0 0 91.66666666666666%;
+  }
+  .col-lg-10 {
+    flex: 0 0 83.33333333333334%;
+  }
+  .col-lg-9 {
+    flex: 0 0 75%;
+  }
+  .col-lg-8 {
+    flex: 0 0 66.66666666666666%;
+  }
+  .col-lg-7 {
+    flex: 0 0 58.333333333333336%;
+  }
+  .col-lg-6 {
+    flex: 0 0 50%;
+  }
+  .col-lg-5 {
+    flex: 0 0 41.66666666666667%;
+  }
+  .col-lg-4 {
+    flex: 0 0 33.33333333333333%;
+  }
+  .col-lg-3 {
+    flex: 0 0 25%;
+  }
+  .col-lg-2 {
+    flex: 0 0 16.666666666666664%;
+  }
+  .col-lg-1 {
+    flex: 0 0 8.333333333333332%;
+  }
+}

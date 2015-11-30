@@ -65,8 +65,8 @@ var copyJS = [
 //concat js files
 gulp.task('js', function(){
   gulp.src(copyJS)
-    // .pipe(compress({type: 'js'}))
-    .pipe(concat('app.min.js'))
+    .pipe(compress({type: 'js'}))
+    // .pipe(concat('app.min.js'))
     .pipe(gulp.dest(projectConfig.destJS))
     .pipe(connect.reload());
 });
